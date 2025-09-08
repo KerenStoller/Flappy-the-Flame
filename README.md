@@ -5,14 +5,15 @@
 ---
 
 ## 📦 Setup Instructions
-
-Clone the repo - git clone https://github.com/yourusername/flappy-the-flame.git
-Open the project in Unity
-Launch Unity Hub.
-Click Open and select the cloned project folder.
-Wait for Unity to import assets
-Open the main scene - Go to Assets/Scenes and open MainScene.unity (or whatever your main scene is called).
-Press Play - Hit the ▶️ Play button in the Unity Editor to start the game.
+1. Clone the repo - git clone https://github.com/yourusername/flappy-the-flame.git
+2. Open the project in Unity
+  - Launch Unity Hub.
+  - Click Open and select the cloned project folder.
+3. Wait for Unity to import assets
+4. Open the main scene
+  - Go to Assets/Scenes and open MainScene.unity (or whatever your main scene is called).
+5. Press Play
+   - Hit the ▶️ Play button in the Unity Editor to start the game.
 ---
 
 ## 🚀 How to Play
@@ -37,17 +38,17 @@ It’s a simple endless runner-style game where you control a dragon trying to s
 - Animated sprite switching for wing flaps
 - Collision detection with towers and ground
 - Game Over screen with restart logic
-Score tracking and UI
-Medieval theme with castles, ruins, and fire vibes
+- Score tracking and UI
+- Medieval theme with castles, ruins, and fire vibes
 
 ---
 
-💡 What I Learned
-How to use Rigidbody2D and colliders
-Managing game state with a LogicManager
-Creating UI with buttons and text 
-Organizing scripts and prefabs
-Accessing and using instances
+## 💡 What I Learned
+- How to use Rigidbody2D and colliders
+- Managing game state with a LogicManager
+- Creating UI with buttons and text 
+- Organizing scripts and prefabs
+- Accessing and using instances
 
 ---
 

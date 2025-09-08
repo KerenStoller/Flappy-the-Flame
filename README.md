@@ -5,8 +5,9 @@
 ---
 
 ## 📦 Setup Instructions
-1. Clone the repo - git clone https://github.com/yourusername/flappy-the-flame.git
-2. Open the project in Unity
+1. Clone the repo
+    - git clone https://github.com/yourusername/flappy-the-flame.git
+3. Open the project in Unity
   - Launch Unity Hub.
   - Click Open and select the cloned project folder.
 3. Wait for Unity to import assets

@@ -6,7 +6,7 @@
 
 ## 📦 Setup Instructions
 1. Clone the repo
-    - git clone https://github.com/yourusername/flappy-the-flame.git
+  - git clone https://github.com/yourusername/flappy-the-flame.git 
 3. Open the project in Unity
   - Launch Unity Hub.
   - Click Open and select the cloned project folder.
@@ -23,7 +23,7 @@
 - Avoid crashing into towers or falling off the screen  
 - After losing, hit the ‘play again’ button to try again
 
-—
+---
 
 ## 🎮 About the Project
 

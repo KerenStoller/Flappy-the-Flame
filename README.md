@@ -6,7 +6,7 @@
 
 ## 📦 Setup Instructions
 1. Clone the repo
-  - git clone https://github.com/KerenStoller/flappy-the-flame.git 
+  - git clone https://github.com/KerenStoller/Flappy-the-Flame.git 
 3. Open the project in Unity
   - Launch Unity Hub.
   - Click Open and select the cloned project folder.

@@ -12,7 +12,7 @@
   - Click Open and select the cloned project folder.
 3. Wait for Unity to import assets
 4. Open the main scene
-  - Go to Assets/Scenes and open MainScene.unity (or whatever your main scene is called).
+  - Go to Assets/Scenes and open MainScene.unity.
 5. Press Play
    - Hit the ▶️ Play button in the Unity Editor to start the game.
 ---
@@ -20,7 +20,7 @@
 ## 🚀 How to Play
 
 - Press `Space` to flap  
-- Avoid crashing into towers or falling off the screen  
+- Avoid crashing into towers or falling on the ground  
 - After losing, hit the ‘play again’ button to try again
 
 ---
@@ -52,4 +52,3 @@ It’s a simple endless runner-style game where you control a dragon trying to s
 - Accessing and using instances
 
 ---
-

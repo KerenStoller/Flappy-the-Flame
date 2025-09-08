@@ -2,21 +2,19 @@ using UnityEngine;
 
 public class TowerSpawn : MonoBehaviour
 {
-    [SerializeField] private GameObject _towerPrefab;
-    [SerializeField] private float _spawnRate = 2f;
-    [SerializeField] private float _heightOffset = 3f;
-    private float _timer = 0f;
+    [SerializeField] private GameObject towerPrefab;
+    [SerializeField] private float spawnRate = 2f;
+    [SerializeField] private float heightOffset = 3f;
+    private float _timer; // initialized to 0 by default
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
         SpawnTower();
     }
     
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if(_timer < _spawnRate)
+        if(_timer < spawnRate)
         {
             _timer += Time.deltaTime;
         }
@@ -27,14 +25,13 @@ public class TowerSpawn : MonoBehaviour
         }
     }
     
-    void SpawnTower()
+    private void SpawnTower()
     {
-        float lowestPoint = transform.position.y - _heightOffset;
-        float highestPoint = transform.position.y + _heightOffset;
+        float lowestPoint = transform.position.y - heightOffset;
+        float highestPoint = transform.position.y + heightOffset;
         float randomY = Random.Range(lowestPoint, highestPoint);
         
         Vector3 newPosition = new Vector3(transform.position.x, randomY, transform.position.z);
-        
-        GameObject tower = Instantiate(_towerPrefab, newPosition, transform.rotation);
+        Instantiate(towerPrefab, newPosition, transform.rotation);
     }
 }

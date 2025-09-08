@@ -3,25 +3,24 @@ using UnityEngine;
 public class Dragon : MonoBehaviour
 {
     public static Dragon Instance {get; private set;}
+    
     /*
      * taking care of velocity and collision
      */
-    [SerializeField] private Rigidbody2D _dragonRigidBody;
-    [SerializeField] private float _flapStrength = 5f;
-    [SerializeField] private float _verticalLimit = 4.75f;
+    [SerializeField] private Rigidbody2D dragonRigidBody;
+    [SerializeField] private float flapStrength = 5f;
+    [SerializeField] private float verticalLimit = 4.75f;
     [SerializeField] private float startingPositionX = -3f;
-    
-    public bool isAlive = true;
-    
     /*
      * taking care of sprite animation
      */
-    private SpriteRenderer spriteRenderer;
-    [SerializeField] private Sprite dyingSprite;
-    [SerializeField] private Sprite[] flappingSprites;
+    [SerializeField] private SpriteRenderer dragonSpriteRenderer;
+    [SerializeField] private Sprite[] flyingSprites;
     [SerializeField] private float flappingSpeed = .12345f;
-    private int currentSpriteIndex = 0;
-    private float timer = 0f;
+    private int _currentSpriteIndex; // initialized to 0 by default
+    private float _timer; // initialized to 0f by default
+    
+    public bool isAlive = true;
     
     private void Awake()
     {
@@ -32,24 +31,22 @@ public class Dragon : MonoBehaviour
         }
 
         Instance = this;
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isAlive)
         {
-            if (transform.position.y < _verticalLimit)
+            if (transform.position.y < verticalLimit) // not allowing to flap above the screen
             {
-                FlapUp();
+                dragonRigidBody.linearVelocity = Vector2.up * flapStrength;
             }
         }
         
-        countdownForFlapping();
+        CountdownForFlapping();
     }
 
-    public void OnEnable()
+    public void OnEnable()  // being called from LogicManager when dragon is enabled
     {
         isAlive = true;
         Vector3 position = transform.position;
@@ -57,41 +54,34 @@ public class Dragon : MonoBehaviour
         position.x = startingPositionX;
         transform.position = position;
         transform.rotation = new Quaternion(0,0,0,0);
-        _dragonRigidBody.angularVelocity = 0f;
-        _dragonRigidBody.linearVelocity = Vector2.zero;
-        spriteRenderer.sprite = dyingSprite;
-        currentSpriteIndex = 0;
-        timer = 0f;
+        dragonRigidBody.angularVelocity = 0f;
+        dragonRigidBody.linearVelocity = Vector2.zero;
+        dragonSpriteRenderer.sprite = flyingSprites[0];
+        _currentSpriteIndex = 0;
+        _timer = 0f;
     }
 
-    private void countdownForFlapping()
+    private void CountdownForFlapping()
     {
-        timer += Time.deltaTime;
-        if (timer >= flappingSpeed)
+        _timer += Time.deltaTime;
+        if (_timer >= flappingSpeed)
         {
-            flapWingsSprites();
-            timer = 0f;
+            FlapWingsSprites();
+            _timer = 0f;
         }
     }
     
-    private void flapWingsSprites()
+    private void FlapWingsSprites()
     {
         if (isAlive)
         {
-            currentSpriteIndex++;
-            if(currentSpriteIndex >= flappingSprites.Length)
+            _currentSpriteIndex++;
+            if(_currentSpriteIndex >= flyingSprites.Length)
             {
-                currentSpriteIndex = 0;
+                _currentSpriteIndex = 0;
             }
-            spriteRenderer.sprite = flappingSprites[currentSpriteIndex];
-        }
-    }
-
-    public void FlapUp()
-    {
-        if (isAlive)
-        {
-            _dragonRigidBody.linearVelocity = Vector2.up * _flapStrength;
+            
+            dragonSpriteRenderer.sprite = flyingSprites[_currentSpriteIndex];
         }
     }
 
@@ -104,7 +94,7 @@ public class Dragon : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Ground"))
         {
-            dragonDead();
+            DragonDead();
         }
     }
     
@@ -119,15 +109,15 @@ public class Dragon : MonoBehaviour
     private void DieAndFallToGround()
     {
         isAlive = false;
-        spriteRenderer.sprite = dyingSprite;
-        _dragonRigidBody.gravityScale = 1f; // Make sure gravity is active
-        _dragonRigidBody.linearVelocity = Vector2.zero; // Stop upward motion
+        dragonSpriteRenderer.sprite = flyingSprites[0];
+        dragonRigidBody.gravityScale = 1f; // Make sure gravity is active
+        dragonRigidBody.linearVelocity = Vector2.zero; // Stop upward motion
     }
 
-    private void dragonDead()
+    private void DragonDead()
     {
         isAlive = false;
-        spriteRenderer.sprite = dyingSprite;
+        dragonSpriteRenderer.sprite = flyingSprites[0];
         LogicManager.Instance.GameOver();
     }
 }

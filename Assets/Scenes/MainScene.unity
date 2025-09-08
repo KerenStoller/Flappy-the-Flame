@@ -825,9 +825,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a5316cd58924f28914a7e0fa6300aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _towerPrefab: {fileID: 2757051356353716457, guid: f428670d7388e46a3b7d0bc6cf581ed6, type: 3}
-  _spawnRate: 2
-  _heightOffset: 2
+  towerPrefab: {fileID: 2757051356353716457, guid: f428670d7388e46a3b7d0bc6cf581ed6, type: 3}
+  spawnRate: 2
+  heightOffset: 3
 --- !u!4 &674603673
 Transform:
   m_ObjectHideFlags: 0
@@ -865,17 +865,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a033c1c6c6b84cd7921660c83960caa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dragonRigidBody: {fileID: 789289843}
-  _flapStrength: 5
-  _verticalLimit: 4.75
+  dragonRigidBody: {fileID: 789289843}
+  flapStrength: 5
+  verticalLimit: 4.75
   startingPositionX: -2
-  isAlive: 1
-  dyingSprite: {fileID: 2492370547789518041, guid: 6547919a6b6b1465db37bf3141770998, type: 3}
-  flappingSprites:
-  - {fileID: -412548083185767840, guid: 6547919a6b6b1465db37bf3141770998, type: 3}
+  dragonSpriteRenderer: {fileID: 789289852}
+  flyingSprites:
   - {fileID: 2492370547789518041, guid: 6547919a6b6b1465db37bf3141770998, type: 3}
   - {fileID: 2842482119021427466, guid: 6547919a6b6b1465db37bf3141770998, type: 3}
+  - {fileID: -412548083185767840, guid: 6547919a6b6b1465db37bf3141770998, type: 3}
   flappingSpeed: 0.12345
+  isAlive: 1
+--- !u!212 &789289852 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4305846473654377158, guid: 5a49003dd1554474e915f3861799482d, type: 3}
+  m_PrefabInstance: {fileID: 1670819059632905515}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &996602144
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,8 +1241,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e306188314f034dfbaa250d003d7edb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreText: {fileID: 1791114209}
-  _gameOverScreen: {fileID: 376534698}
+  scoreText: {fileID: 1791114209}
+  gameOverScreen: {fileID: 376534698}
   startGameButton: {fileID: 237584343}
 --- !u!4 &1977562020
 Transform:

@@ -1,11 +1,9 @@
-using System;
 using UnityEngine;
 
 public class Parallax : MonoBehaviour
 {
     [SerializeField] private MeshRenderer meshRenderer;
     [SerializeField] private float movingBackgroundSpeed = 0.05f;
-    
 
     private void Awake()
     {

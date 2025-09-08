@@ -867,8 +867,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dragonRigidBody: {fileID: 789289843}
   _flapStrength: 5
-  _verticalLimit: 6
-  startingPositionX: -5
+  _verticalLimit: 4.75
+  startingPositionX: -2
   isAlive: 1
   dyingSprite: {fileID: 2492370547789518041, guid: 6547919a6b6b1465db37bf3141770998, type: 3}
   flappingSprites:

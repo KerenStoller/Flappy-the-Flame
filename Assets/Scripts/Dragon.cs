@@ -87,12 +87,12 @@ public class Dragon : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Obstacle"))
+        if (collision.gameObject.CompareTag(Constans.ObstacleTag))
         {
             DieAndFallToGround();
         }
 
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag(Constans.GroundTag))
         {
             DragonDead();
         }
@@ -100,7 +100,7 @@ public class Dragon : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("ScoreZone") && isAlive)
+        if (other.gameObject.CompareTag(Constans.ScoreZoneTag) && isAlive)
         {
             LogicManager.Instance.IncreaseScore();
         }

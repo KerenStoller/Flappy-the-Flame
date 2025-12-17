@@ -4,6 +4,12 @@
 
 ---
 
+| Gameplay Preview |
+| :---: |
+| https://github.com/user-attachments/assets/00625ace-ba9e-4e6d-892d-7c618e493d58 |
+
+___
+
 ## 📦 Setup Instructions
 1. Clone the repo
   - git clone https://github.com/KerenStoller/Flappy-the-Flame.git 

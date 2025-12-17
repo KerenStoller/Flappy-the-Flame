@@ -4,15 +4,8 @@
 
 ---
 
-| Gameplay Preview |
-| :---: |
-| https://github.com/user-attachments/assets/192eb394-3f07-4723-a67b-11b082eec10d |
-
-
 
 https://github.com/user-attachments/assets/61485d3c-0d50-4e92-af37-42219d696903
-
-
 
 
 ___
